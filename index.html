@@ -1,3 +1,188 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>김승현 포트폴리오</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>
+/* Layout: 코발트 블루 히어로 + 흰 타일 위에 놓이는 제품 사진. Works는 사진 비율을 그대로 살린 벽돌형 배치, 상세는 오른쪽이 파란 패널인 라이트박스. */
+:root{
+  --bg:#F2F4FB; --paper:#FFFFFF; --ink:#0F1633; --muted:#586082; --rule:#D6DBEE;
+  --brand:#2A45E6; --brand-ink:#FFFFFF; --brand-soft:#C9D1FF; --tile:#FFFFFF;
+  --display:"Bricolage Grotesque","Noto Sans KR",system-ui,sans-serif;
+  --body:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --gutter:clamp(16px,4vw,56px); --max:1280px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B0F20; --paper:#141A33; --ink:#EEF0FB; --muted:#9AA3C9; --rule:#262F57;
+    --brand:#7D8FFF; --brand-ink:#0B0F20; --brand-soft:#232C63; --tile:#FFFFFF; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B0F20; --paper:#141A33; --ink:#EEF0FB; --muted:#9AA3C9; --rule:#262F57;
+  --brand:#7D8FFF; --brand-ink:#0B0F20; --brand-soft:#232C63; --tile:#FFFFFF; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.7 var(--body);margin:0;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+h1,h2,h3,h4,p,dl,dd{margin:0}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
+.on-brand :focus-visible{outline-color:var(--brand-ink)}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+section{padding-block:clamp(64px,9vw,120px)}
+.label{font:700 13px/1.4 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--brand)}
+.sec-title{font:800 clamp(40px,7.5vw,104px)/.95 var(--display);letter-spacing:-.04em;text-wrap:balance}
+.sec-head{display:grid;gap:16px;margin-bottom:clamp(32px,5vw,56px)}
+.sec-head .lead{max-width:58ch;color:var(--muted)}
+
+/* nav */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;padding-block:12px;pointer-events:none}
+.top .wrap{display:flex;justify-content:center}
+.pill{pointer-events:auto;display:flex;align-items:center;gap:6px;background:var(--paper);border:1px solid var(--rule);border-radius:999px;padding:6px 8px 6px 20px;box-shadow:0 6px 24px color-mix(in srgb,var(--ink) 10%,transparent);max-width:100%}
+.pill .brand{font:800 14px/1 var(--display);letter-spacing:-.01em;text-decoration:none;white-space:nowrap;margin-right:8px}
+.pill a.nav{font-size:14px;font-weight:500;text-decoration:none;padding:8px 14px;border-radius:999px;color:var(--muted);white-space:nowrap}
+.pill a.nav:hover{background:var(--brand-soft);color:var(--ink)}
+.pill a.cta{background:var(--brand);color:var(--brand-ink);font-weight:700}
+.pill a.cta:hover{background:var(--brand);filter:brightness(1.1);color:var(--brand-ink)}
+@media (max-width:640px){.pill a.nav.opt{display:none}.pill{padding-left:16px}}
+
+/* hero */
+.hero{background:var(--brand);color:var(--brand-ink);margin-top:-68px;padding-top:calc(68px + clamp(48px,8vw,104px));padding-bottom:clamp(40px,6vw,80px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:end}
+@media (max-width:900px){.hero-grid{grid-template-columns:minmax(0,1fr)}}
+.hero .kicker{font:700 13px/1.4 var(--display);letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.hero .name{font:800 clamp(52px,11vw,168px)/.88 var(--display);letter-spacing:-.05em;margin-top:20px}
+.hero .name span{display:block}
+.hero h1{font:900 clamp(20px,2.4vw,30px)/1.45 var(--body);letter-spacing:-.02em;margin-top:clamp(24px,3vw,40px);max-width:24em;text-wrap:balance}
+.hero .sub{margin-top:16px;max-width:52ch;opacity:.88;font-size:clamp(15px,1.4vw,17px)}
+.hero-img{background:var(--tile);margin:0;padding:clamp(8px,1.4vw,16px)}
+.hero-img img{width:100%;height:auto}
+.hero-img figcaption{font-size:12px;color:#5C6482;padding:8px 4px 0}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(20px,3vw,40px);margin-top:clamp(40px,6vw,80px);padding-top:28px;border-top:1px solid color-mix(in srgb,var(--brand-ink) 40%,transparent)}
+.fact{display:grid;gap:6px;align-content:start}
+.fact b{font:800 clamp(34px,4.4vw,56px)/1 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.fact span{font-size:14px;opacity:.85;max-width:30ch}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(32px,6vw,96px)}
+@media (max-width:900px){.about-grid{grid-template-columns:minmax(0,1fr)}}
+.about-lead{font:700 clamp(20px,2.4vw,28px)/1.6 var(--body);letter-spacing:-.025em;max-width:30em}
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:36px}
+.duo div{background:var(--paper);padding:24px;border:1px solid var(--rule)}
+.duo h3{font:800 15px/1.4 var(--body);margin-bottom:12px}
+.duo ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;color:var(--muted);font-size:15px}
+.skills{background:var(--paper);border:1px solid var(--rule);padding:clamp(20px,3vw,32px);align-self:start}
+.skills h3{font:800 22px/1 var(--display);margin-bottom:20px}
+.meter{display:grid;gap:14px;margin-bottom:28px}
+.meter .m{display:grid;grid-template-columns:36px minmax(0,1fr) 28px;gap:12px;align-items:center;font:700 14px/1 var(--display)}
+.meter .cells{display:grid;grid-template-columns:repeat(10,1fr);gap:3px}
+.meter .cells i{height:14px;background:var(--rule)}
+.meter .cells i.on{background:var(--brand)}
+.meter .num{color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:13px;padding:3px 10px;background:var(--brand-soft);color:var(--ink)}
+
+/* works */
+.tabs{display:flex;gap:4px 22px;flex-wrap:wrap;border-bottom:1px solid var(--rule);margin-bottom:clamp(24px,4vw,40px)}
+.tab{background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-1px;padding:10px 0;font-size:15px;font-weight:500;color:var(--muted)}
+.tab:hover{color:var(--ink)}
+.tab[aria-pressed="true"]{color:var(--ink);font-weight:700;border-color:var(--brand)}
+.tab sup{font:600 11px/1 var(--display);margin-left:3px;color:var(--brand);font-variant-numeric:tabular-nums}
+.masonry{columns:3 300px;column-gap:clamp(16px,2vw,28px)}
+.card{all:unset;box-sizing:border-box;display:block;width:100%;break-inside:avoid;margin-bottom:clamp(20px,3vw,36px);cursor:pointer}
+.card:focus-visible{outline:3px solid var(--brand);outline-offset:4px}
+.card .tile{background:var(--tile);padding:clamp(6px,1vw,12px);border:1px solid var(--rule);position:relative;overflow:hidden}
+.card .tile img{width:100%;height:auto;transition:transform .4s ease}
+.card:hover .tile img{transform:scale(1.03)}
+.card .more{position:absolute;right:10px;bottom:10px;background:var(--brand);color:var(--brand-ink);font:700 12px/1 var(--display);padding:7px 10px;opacity:0;transform:translateY(4px);transition:.2s}
+.card:hover .more,.card:focus-visible .more{opacity:1;transform:none}
+.card .cap{display:flex;justify-content:space-between;gap:12px;margin-top:10px;align-items:baseline}
+.card h3{font:700 16px/1.4 var(--body);letter-spacing:-.01em}
+.card .sub{font-size:13px;color:var(--muted);margin-top:2px}
+.card .tag-cat{font:700 11px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--brand);white-space:nowrap}
+.empty{color:var(--muted);padding-block:32px}
+
+/* process */
+.process{background:var(--paper);border-block:1px solid var(--rule)}
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(16px,2vw,28px)}
+@media (max-width:980px){.steps{grid-template-columns:minmax(0,1fr)}}
+.step{display:grid;gap:8px;align-content:start;padding-top:18px;border-top:2px solid var(--ink)}
+@media (max-width:980px){.step{grid-template-columns:72px minmax(0,1fr);column-gap:16px}.step .n{grid-row:span 2}}
+.step .n{font:800 clamp(48px,5vw,72px)/.9 var(--display);letter-spacing:-.05em;color:var(--brand);font-variant-numeric:tabular-nums}
+.step h3{font:900 22px/1.3 var(--body);letter-spacing:-.02em}
+.step p{color:var(--muted);font-size:14.5px}
+
+/* experience */
+.job{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:clamp(16px,4vw,72px);padding-block:32px;border-top:1px solid var(--ink)}
+.job:last-of-type{border-bottom:1px solid var(--ink)}
+@media (max-width:760px){.job{grid-template-columns:minmax(0,1fr);gap:12px}}
+.job .yr{font:800 clamp(30px,3.6vw,46px)/1 var(--display);letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.job .yr small{display:block;font:500 14px/1.5 var(--body);letter-spacing:0;color:var(--muted);margin-top:8px}
+.job h3{font:900 clamp(22px,2.4vw,28px)/1.3 var(--body);letter-spacing:-.025em}
+.job .role-line{color:var(--brand);font-weight:700;font-size:14.5px;margin-top:2px}
+.job ul{margin:16px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:6px 28px;font-size:15px}
+.job li{padding-left:16px;position:relative}
+.job li::before{content:"";position:absolute;left:0;top:.8em;width:7px;height:7px;background:var(--brand)}
+.events{margin-top:clamp(40px,6vw,72px);background:var(--paper);border:1px solid var(--rule);padding:clamp(20px,3vw,36px)}
+.events h3{font:800 22px/1.2 var(--display);margin-bottom:18px}
+.events dl{display:grid;gap:12px}
+.events dl div{display:grid;grid-template-columns:minmax(0,120px) minmax(0,1fr);gap:16px;font-size:15px}
+@media (max-width:520px){.events dl div{grid-template-columns:minmax(0,1fr);gap:0}}
+.events dt{font:700 14px/1.7 var(--display);color:var(--brand);font-variant-numeric:tabular-nums}
+
+/* contact */
+.contact{background:var(--brand);color:var(--brand-ink)}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:end}
+@media (max-width:900px){.contact-grid{grid-template-columns:minmax(0,1fr)}}
+.contact .label{color:var(--brand-ink);opacity:.85}
+.contact .big{font:900 clamp(28px,4.6vw,60px)/1.2 var(--body);letter-spacing:-.035em;margin-top:18px;max-width:13em;text-wrap:balance}
+.pdf-link{display:inline-block;margin-top:32px;padding:14px 26px;background:var(--brand-ink);color:var(--brand);text-decoration:none;font-weight:800}
+.pdf-link:hover{filter:brightness(.94)}
+.rows{border-top:1px solid color-mix(in srgb,var(--brand-ink) 45%,transparent)}
+.row{display:grid;grid-template-columns:92px minmax(0,1fr);gap:16px;padding-block:16px;border-bottom:1px solid color-mix(in srgb,var(--brand-ink) 45%,transparent);align-items:baseline}
+.row dt{font:700 12px/1.4 var(--display);letter-spacing:.12em;text-transform:uppercase;opacity:.8}
+.row dd{display:flex;gap:12px;align-items:center;flex-wrap:wrap;min-width:0}
+.row .val{user-select:all;overflow-wrap:anywhere;font-weight:700}
+.row .pending{opacity:.8;font-size:14px}
+.copy{border:1px solid color-mix(in srgb,var(--brand-ink) 60%,transparent);background:transparent;color:var(--brand-ink);padding:2px 12px;font-size:12px}
+.copy:hover{background:var(--brand-ink);color:var(--brand)}
+footer{background:var(--brand);color:var(--brand-ink);padding-block:24px;font-size:13px;border-top:1px solid color-mix(in srgb,var(--brand-ink) 35%,transparent)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;opacity:.85}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:60;background:color-mix(in srgb,#05081a 78%,transparent);display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) 16px max(16px,env(safe-area-inset-bottom,0px))}
+.modal[hidden]{display:none!important}
+.sheet{width:min(1180px,100%);max-height:100%;overflow:auto;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);background:var(--paper)}
+@media (max-width:860px){.sheet{grid-template-columns:minmax(0,1fr)}}
+.stage{background:var(--tile);display:grid;align-content:start;min-width:0}
+.stage .main{display:grid;place-items:center;padding:clamp(8px,2vw,24px);min-height:220px}
+.stage .main img{width:100%;height:auto;max-height:80vh;object-fit:contain}
+.thumbs{display:flex;gap:8px;padding:10px;overflow-x:auto;border-top:1px solid #E1E4F0}
+.thumbs button{all:unset;cursor:pointer;width:76px;height:56px;flex:none;border:2px solid transparent;background:#fff;display:grid;place-items:center}
+.thumbs button[aria-current="true"]{border-color:var(--brand)}
+.thumbs img{width:100%;height:100%;object-fit:contain}
+.info{background:var(--brand);color:var(--brand-ink);padding:clamp(22px,3vw,40px);display:flex;flex-direction:column;gap:18px;min-width:0}
+.info .eyebrow{font:700 12px/1.4 var(--display);letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.info h3{font:900 clamp(26px,3vw,38px)/1.2 var(--body);letter-spacing:-.035em}
+.info .desc{opacity:.92;font-size:15.5px}
+.info dl{display:grid;gap:14px}
+.info dt{font:700 11px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;opacity:.75;margin-bottom:8px}
+.info dd{display:flex;gap:8px;flex-wrap:wrap}
+.pill-role{font-size:13px;padding:3px 12px;border:1px solid color-mix(in srgb,var(--brand-ink) 55%,transparent)}
+.tool{font:700 12px/1 var(--display);padding:7px 10px;background:#0B2236;color:#6CB4E4}
+.tool.ai{background:#2D0A0A;color:#F2A93B}
+.tool.id{background:#4A0F25;color:#F0527E}
+.tool.etc{background:var(--brand-ink);color:var(--brand)}
+.ctrl{display:flex;gap:8px;margin-top:auto;padding-top:12px;flex-wrap:wrap}
+.ctrl button{border:1px solid color-mix(in srgb,var(--brand-ink) 60%,transparent);background:transparent;padding:9px 16px;font-size:14px;font-weight:500}
+.ctrl button:hover{background:color-mix(in srgb,var(--brand-ink) 18%,transparent)}
+.ctrl .close{margin-left:auto;background:var(--brand-ink);color:var(--brand);border-color:var(--brand-ink);font-weight:800}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card .tile img,.card .more{transition:none}}
+</style>
+
 <header class="top">
   <div class="wrap">
     <nav class="pill" aria-label="주요 메뉴">
@@ -17,11 +202,7 @@
       <div class="hero-grid">
         <div>
           <p class="kicker">Product · Package · Detail Page · Catalogue</p>
-          <p class="name" aria-label="Kim Seung Hyeun">
-            <span>Kim</span>
-            <span>Seung</span>
-            <span>Hyeun</span>
-          </p>
+          <p class="name" aria-label="Kim Seung Hyeun"><span>Kim</span><span>Seung</span><span>Hyeun</span></p>
           <h1>기획부터 촬영, 인쇄 감리, 쇼핑몰 운영까지 한 사람이 끝까지 책임집니다.</h1>
           <p class="sub">디자인, 촬영, 인쇄, 쇼핑몰 운영까지 전 과정을 단독으로 수행해 온 실무형 디자이너입니다. 일정 준수와 작업 안정성을 가장 큰 강점으로 삼고 있습니다.</p>
         </div>
@@ -30,35 +211,20 @@
           <figcaption>TON chair 추가 제품 촬영 · 에프엠가구</figcaption>
         </figure>
       </div>
-
       <div class="facts">
-        <div class="fact">
-          <b>1,000+</b>
-          <span>신제품 촬영 (에프엠가구, 2023~25)</span>
-        </div>
-        <div class="fact">
-          <b>10년+</b>
-          <span>고정 거래처 신제품을 촬영부터 상세페이지까지 일괄 진행</span>
-        </div>
-        <div class="fact">
-          <b>첫 공식 카탈로그</b>
-          <span>6년간 카탈로그가 없던 기업의 기획부터 인쇄 감리까지 전담</span>
-        </div>
+        <div class="fact"><b>1,000+</b><span>신제품 촬영 (에프엠가구, 2023~25)</span></div>
+        <div class="fact"><b>10년+</b><span>고정 거래처 신제품을 촬영부터 상세페이지까지 일괄 진행</span></div>
+        <div class="fact"><b>첫 공식 카탈로그</b><span>6년간 카탈로그가 없던 기업의 기획부터 인쇄 감리까지 전담</span></div>
       </div>
     </div>
   </section>
 
   <section id="about">
     <div class="wrap">
-      <div class="sec-head">
-        <p class="label">About</p>
-        <h2 class="sec-title">About me</h2>
-      </div>
-
+      <div class="sec-head"><p class="label">About</p><h2 class="sec-title">About me</h2></div>
       <div class="about-grid">
         <div>
           <p class="about-lead">기업 브랜딩, 제품 촬영 및 상세페이지 제작, 온라인 콘텐츠 기획, 전시·행사 비주얼 디자인을 담당하며 브랜드 아이덴티티 확립부터 제품 판매 촉진까지 전 과정을 주도했습니다.</p>
-
           <div class="duo">
             <div>
               <h3>디자인 &amp; 브랜딩</h3>
@@ -68,7 +234,6 @@
                 <li>의류 그래픽 디자인</li>
               </ul>
             </div>
-
             <div>
               <h3>웹 &amp; 콘텐츠 제작</h3>
               <ul>
@@ -80,7 +245,6 @@
             </div>
           </div>
         </div>
-
         <aside class="skills">
           <h3>Skills</h3>
           <div class="meter" id="meter"></div>
@@ -97,7 +261,6 @@
         <h2 class="sec-title">Works</h2>
         <p class="lead">카테고리를 고르고 작업을 누르면 이미지와 맡은 역할을 자세히 볼 수 있습니다.</p>
       </div>
-
       <div class="tabs" id="tabs" role="group" aria-label="작업 카테고리"></div>
       <div class="masonry" id="grid"></div>
     </div>
@@ -110,53 +273,24 @@
         <h2 class="sec-title">Process</h2>
         <p class="lead">외주를 나누지 않고 한 사람이 이어서 진행하기 때문에 단계 사이에 일정과 품질이 끊기지 않습니다.</p>
       </div>
-
       <div class="steps">
-        <div class="step">
-          <span class="n">1</span>
-          <h3>기획</h3>
-          <p>촬영 컨셉, 카탈로그 구성, 상세페이지 흐름을 먼저 설계합니다.</p>
-        </div>
-        <div class="step">
-          <span class="n">2</span>
-          <h3>촬영</h3>
-          <p>제품, 컨셉, 모델, 영상 촬영과 보정·색보정까지 직접 진행합니다.</p>
-        </div>
-        <div class="step">
-          <span class="n">3</span>
-          <h3>디자인</h3>
-          <p>상세페이지, 패키지, 편집물, 배너와 SNS 이미지를 제작합니다.</p>
-        </div>
-        <div class="step">
-          <span class="n">4</span>
-          <h3>인쇄 발주·감리</h3>
-          <p>인쇄 발주를 관리하고 현장에서 감리해 결과물 품질을 맞춥니다.</p>
-        </div>
-        <div class="step">
-          <span class="n">5</span>
-          <h3>운영</h3>
-          <p>카페24 B2B 쇼핑몰 리뉴얼과 유지관리, 광고 이미지 제작을 이어서 맡습니다.</p>
-        </div>
+        <div class="step"><span class="n">1</span><h3>기획</h3><p>촬영 컨셉, 카탈로그 구성, 상세페이지 흐름을 먼저 설계합니다.</p></div>
+        <div class="step"><span class="n">2</span><h3>촬영</h3><p>제품, 컨셉, 모델, 영상 촬영과 보정·색보정까지 직접 진행합니다.</p></div>
+        <div class="step"><span class="n">3</span><h3>디자인</h3><p>상세페이지, 패키지, 편집물, 배너와 SNS 이미지를 제작합니다.</p></div>
+        <div class="step"><span class="n">4</span><h3>인쇄 발주·감리</h3><p>인쇄 발주를 관리하고 현장에서 감리해 결과물 품질을 맞춥니다.</p></div>
+        <div class="step"><span class="n">5</span><h3>운영</h3><p>카페24 B2B 쇼핑몰 리뉴얼과 유지관리, 광고 이미지 제작을 이어서 맡습니다.</p></div>
       </div>
     </div>
   </section>
 
   <section id="experience">
     <div class="wrap">
-      <div class="sec-head">
-        <p class="label">Experience</p>
-        <h2 class="sec-title">Experience</h2>
-      </div>
-
+      <div class="sec-head"><p class="label">Experience</p><h2 class="sec-title">Experience</h2></div>
       <div>
         <article class="job">
-          <div class="yr">
-            2021 – 2025
-            <small>2021.09 – 2025.08 · 4년</small>
-          </div>
+          <div class="yr">2021 – 2025<small>2021.09 – 2025.08 · 4년</small></div>
           <div>
-            <h3>에프엠가구</h3>
-            <p class="role-line">기획운영실 과장</p>
+            <h3>에프엠가구</h3><p class="role-line">기획운영실 과장</p>
             <ul>
               <li>B2B 쇼핑몰(카페24) 리뉴얼 및 유지관리</li>
               <li>제품 촬영 및 상세페이지 제작 전담</li>
@@ -167,15 +301,10 @@
             </ul>
           </div>
         </article>
-
         <article class="job">
-          <div class="yr">
-            2017 – 2021
-            <small>2017.08 – 2021.07 · 4년</small>
-          </div>
+          <div class="yr">2017 – 2021<small>2017.08 – 2021.07 · 4년</small></div>
           <div>
-            <h3>이앤디자인</h3>
-            <p class="role-line">프리랜서 디자이너</p>
+            <h3>이앤디자인</h3><p class="role-line">프리랜서 디자이너</p>
             <ul>
               <li>브랜드 패키지 디자인</li>
               <li>제품 촬영 및 보정</li>
@@ -185,15 +314,10 @@
             </ul>
           </div>
         </article>
-
         <article class="job">
-          <div class="yr">
-            2014 – 2017
-            <small>2014.07 – 2017.07 · 3년 1개월</small>
-          </div>
+          <div class="yr">2014 – 2017<small>2014.07 – 2017.07 · 3년 1개월</small></div>
           <div>
-            <h3>에이와이컴퍼니</h3>
-            <p class="role-line">그래픽디자인실 과장</p>
+            <h3>에이와이컴퍼니</h3><p class="role-line">그래픽디자인실 과장</p>
             <ul>
               <li>자체 브랜드 CI·로고 디자인 개발</li>
               <li>박람회 그래픽 및 부스 디자인 총괄</li>
@@ -204,30 +328,14 @@
           </div>
         </article>
       </div>
-
       <div class="events">
         <h3>Shows &amp; Events</h3>
         <dl>
-          <div>
-            <dt>2023 – 2024</dt>
-            <dd>브랜드 제품 촬영 및 상세페이지 제작, 광고물 디자인, 코엑스 가구 박람회</dd>
-          </div>
-          <div>
-            <dt>2018 – 2022</dt>
-            <dd>코엑스 보트쇼 / 중국 아웃도어쇼 — 부스 그래픽 디자인, 행사 사진 및 영상 촬영</dd>
-          </div>
-          <div>
-            <dt>2013</dt>
-            <dd>경기 국제 보트쇼 참가 — 부스 그래픽 작업 및 행사 촬영·영상 제작</dd>
-          </div>
-          <div>
-            <dt>2012 – 2013</dt>
-            <dd>킨텍스 FISHING SHOW — 당사 부스 그래픽 디자인 및 영상 촬영</dd>
-          </div>
-          <div>
-            <dt>2011 – 2013</dt>
-            <dd>잡지 광고 편집 및 홈페이지 관리, 제품 촬영 및 영상 편집</dd>
-          </div>
+          <div><dt>2023 – 2024</dt><dd>브랜드 제품 촬영 및 상세페이지 제작, 광고물 디자인, 코엑스 가구 박람회</dd></div>
+          <div><dt>2018 – 2022</dt><dd>코엑스 보트쇼 / 중국 아웃도어쇼 — 부스 그래픽 디자인, 행사 사진 및 영상 촬영</dd></div>
+          <div><dt>2013</dt><dd>경기 국제 보트쇼 참가 — 부스 그래픽 작업 및 행사 촬영·영상 제작</dd></div>
+          <div><dt>2012 – 2013</dt><dd>킨텍스 FISHING SHOW — 당사 부스 그래픽 디자인 및 영상 촬영</dd></div>
+          <div><dt>2011 – 2013</dt><dd>잡지 광고 편집 및 홈페이지 관리, 제품 촬영 및 영상 편집</dd></div>
         </dl>
       </div>
     </div>
@@ -246,39 +354,22 @@
     </div>
   </section>
 </main>
-
-<footer class="on-brand">
-  <div class="wrap">
-    <span>© Kim Seung Hyeun</span>
-    <span>Namyangju, Korea</span>
-  </div>
-</footer>
+<footer class="on-brand"><div class="wrap"><span>© Kim Seung Hyeun</span><span>Namyangju, Korea</span></div></footer>
 
 <div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="m-title">
   <div class="sheet on-brand">
     <div class="stage">
-      <div class="main">
-        <img id="m-img" alt="">
-      </div>
+      <div class="main"><img id="m-img" alt=""></div>
       <div class="thumbs" id="m-thumbs" hidden></div>
     </div>
-
     <div class="info">
       <p class="eyebrow" id="m-cat"></p>
       <h3 id="m-title"></h3>
       <p class="desc" id="m-desc"></p>
-
       <dl>
-        <div>
-          <dt>맡은 역할</dt>
-          <dd id="m-roles"></dd>
-        </div>
-        <div>
-          <dt>사용 툴</dt>
-          <dd id="m-tools"></dd>
-        </div>
+        <div><dt>맡은 역할</dt><dd id="m-roles"></dd></div>
+        <div><dt>사용 툴</dt><dd id="m-tools"></dd></div>
       </dl>
-
       <div class="ctrl">
         <button type="button" id="m-prev">이전</button>
         <button type="button" id="m-next">다음</button>
@@ -287,3 +378,180 @@
     </div>
   </div>
 </div>
+
+<script>
+/* 연락처가 확정되면 이 값만 채우면 됩니다. 비어 있으면 '입력 대기'로 표시됩니다. */
+const CONTACT = { email: "", phone: "", address: "경기도 남양주" };
+
+const CATS = ["제품 촬영","상세페이지","컨셉 촬영","카탈로그","패키지","장비·의류","SNS","AI 그래픽","브랜딩"];
+const PS = ["Ps"], ALL3 = ["Ps","Ai","Lr"];
+const WORKS = [
+  { id:"ton", cats:["제품 촬영"], title:"TON chair 추가 제품 촬영", sub:"에프엠가구 · 2023–25", imgs:["hero.jpg"], roles:["기획","촬영","광고 제작"], tools:ALL3,
+    desc:"체코 브랜드 TON chair의 추가 제품을 촬영하고 광고 이미지로 제작했습니다. 같은 구도에서 컬러만 바꿔 라인업 전체가 한 번에 읽히도록 정리했습니다." },
+  { id:"edge", cats:["제품 촬영"], title:"Edge Chair 제품 촬영 및 광고", sub:"에프엠가구 · 2023–25", imgs:["edge.jpg"], roles:["촬영","광고 제작"], tools:ALL3,
+    desc:"이탈리아 디자이너 마리아가 디자인한 플라스틱 체어를 제품 촬영하고 디자이너 소개가 들어간 광고 배너로 제작했습니다." },
+  { id:"thousand", cats:["제품 촬영"], title:"신제품 1,000종 촬영", sub:"에프엠가구 · 2023–25", imgs:["thousand.jpg"], roles:["촬영","보정"], tools:ALL3,
+    desc:"2023년부터 2025년까지 총 1,000가지 신제품을 촬영했습니다. 흰 배경과 일정한 구도를 유지해 쇼핑몰과 카탈로그에서 바로 쓸 수 있게 만들었습니다." },
+  { id:"ton314", cats:["상세페이지"], title:"Ton chair 314 상세페이지", sub:"에프엠가구", imgs:["ton314.jpg"], roles:["기획","상세페이지"], tools:ALL3,
+    desc:"본사에서 제공받은 이미지를 활용해 상세페이지를 진행했습니다." },
+  { id:"lazitta", cats:["제품 촬영","상세페이지"], title:"Ton chair La Zitta", sub:"에프엠가구", imgs:["lazitta.jpg"], roles:["기획","촬영","상세페이지","패키지"], tools:ALL3,
+    desc:"본사 제공 이미지에 직접 촬영한 제품 컷을 더해 상세페이지를 진행했습니다. 컬러 구성과 디자이너 소개, 디테일 컷을 한 흐름으로 묶었습니다." },
+  { id:"oak", cats:["제품 촬영","상세페이지"], title:"Around Oak Armchair", sub:"에프엠가구", imgs:["oak.jpg"], roles:["촬영 기획","촬영","상세페이지","패키지"], tools:ALL3,
+    desc:"본사 쇼룸의 한정된 공간에서 컨셉에 맞게 촬영을 시도해 고급스러운 우드 체어 이미지를 만들었습니다." },
+  { id:"concept", cats:["컨셉 촬영","상세페이지"], title:"주력 상품 컨셉 촬영", sub:"에프엠가구", imgs:["concept.jpg"], roles:["촬영 컨셉","촬영 기획","상세페이지","패키지"], tools:ALL3,
+    desc:"본사 주력 상품을 주방과 다이닝 공간에 놓은 컨셉 촬영입니다. 촬영 컨셉과 기획을 함께 진행했습니다." },
+  { id:"geumyang", cats:["제품 촬영","상세페이지"], title:"금양 낚시릴 촬영 및 상세페이지", sub:"주식회사 금양 · 10년 이상 고정 거래", imgs:["geumyang.jpg"], roles:["기획","촬영","상세페이지"], tools:ALL3,
+    desc:"반사가 있는 제품 특성을 고려해 화이트 빛을 컷한 조명 환경에서 촬영했습니다. 불필요한 반사와 하이라이트를 줄여 질감과 형태가 선명하게 보이도록 했고, 구성품과 주요 특징은 디테일 확대 컷으로 구성했습니다. 신제품을 촬영부터 상세페이지까지 일괄 진행합니다." },
+  { id:"miracle", cats:["제품 촬영","상세페이지"], title:"미라클 스토리", sub:"제품 촬영 + 상세페이지", imgs:["miracle.jpg"], roles:["기획","촬영","상세페이지","패키지"], tools:ALL3,
+    desc:"제품 컨셉에 맞는 야외 촬영과 호리존 촬영을 진행해 제품 특성을 살렸습니다. 차별화된 이미지 전략으로 매출 증대 성과를 냈습니다." },
+  { id:"amigo", cats:["제품 촬영","상세페이지"], title:"아미고 라이프자켓", sub:"제품 촬영 + 상세페이지", imgs:["amigo.jpg"], roles:["기획","촬영","상세페이지","패키지"], tools:ALL3,
+    desc:"라이프자켓을 고스트컷으로 촬영해 구조적 특징과 디테일을 입체적으로 표현했습니다. 시각적 완성도를 높여 제품이 더 고급스럽게 보이도록 했습니다." },
+  { id:"food", cats:["컨셉 촬영"], title:"Food 스타일링 촬영", sub:"제품 촬영", imgs:["food.jpg"], roles:["기획","촬영","상세페이지"], tools:ALL3,
+    desc:"맛있어 보이고, 흥미를 끌고, 보기 좋은 음식이라는 컨셉을 세워 스타일링하면서 촬영했습니다." },
+  { id:"model", cats:["컨셉 촬영"], title:"Model 브랜드 컨셉·룩북", sub:"브랜드 컨셉 + 룩북 촬영", imgs:["model.jpg"], roles:["기획","촬영","상세페이지"], tools:ALL3,
+    desc:"촬영 컨셉 기획부터 촬영까지 진행했습니다. 브랜드 컨셉 모델 촬영과 룩북 촬영을 맡았습니다." },
+  { id:"acc", cats:["컨셉 촬영"], title:"ACC 악세사리 야외 컨셉", sub:"10년 이상 고정 업체", imgs:["acc.jpg"], roles:["기획","촬영","상세페이지"], tools:ALL3,
+    desc:"악세사리를 야외 컨셉으로 촬영했습니다. 10년 이상 거래한 업체의 신제품을 촬영부터 상세페이지 제작까지 일괄 진행합니다." },
+  { id:"catalogue", cats:["카탈로그"], title:"Design Chairs 공식 카탈로그", sub:"에프엠가구", imgs:["cat_pages.jpg","cat_books.jpg"], roles:["기획","구성","디자인","인쇄 감리"], tools:["Id","Ps","Ai"],
+    desc:"6년간 카탈로그가 없던 기업의 첫 공식 카탈로그 제작을 전담했습니다. 단순 디자인 작업이 아니라 기획 단계부터 구성, 디자인, 인쇄 감리까지 전 과정을 진행했습니다." },
+  { id:"labels", cats:["패키지"], title:"Pickle Pantry · Nut Pantry", sub:"식품 라벨 디자인", imgs:["labels.jpg"], roles:["라벨 디자인"], tools:["Ai","Ps"],
+    desc:"피클과 땅콩버터 병에 붙는 라벨을 디자인했습니다. 성분, 영양 정보, 바코드 영역까지 배치했습니다." },
+  { id:"pureve", cats:["패키지"], title:"PUREVE 스킨케어", sub:"튜브 · 용기 패키지", imgs:["pureve.jpg"], roles:["패키지 디자인"], tools:["Ai","Ps"],
+    desc:"민감성·건성 피부용 하이드레이팅 크림의 튜브와 용기 패키지를 디자인했습니다." },
+  { id:"luworks", cats:["패키지"], title:"루웍스 스피어피쉬 패키지", sub:"후크 패키지 · 인쇄 사양", imgs:["luworks.jpg"], roles:["패키지 디자인","인쇄 발주"], tools:["Ai","Ps"],
+    desc:"텅스텐 헤드 제품의 후크 패키지입니다. 재단선, 스티커, 팬톤 컬러 지정과 크기 표기까지 인쇄 사양을 함께 정리했습니다." },
+  { id:"happypet", cats:["패키지"], title:"해피 펫 푸드 패키지", sub:"수제간식 브랜드", imgs:["happypet.jpg"], roles:["패키지 디자인"], tools:["Ai","Ps"],
+    desc:"수제 반려동물 간식의 파우치 라벨입니다. 맛별 컬러를 나누고 무방부제·무첨가제·무보존제 표기를 눈에 띄게 배치했습니다." },
+  { id:"pinnacle", cats:["장비·의류"], title:"피나클 구명팽창 & 장갑", sub:"의류 그래픽 디자인", imgs:["pinnacle.jpg"], roles:["그래픽 디자인"], tools:["Ai"],
+    desc:"피나클 구명팽창조끼와 낚시 장갑의 컬러웨이와 그래픽을 디자인했습니다." },
+  { id:"sns", cats:["SNS"], title:"가구 SNS 카드뉴스", sub:"에프엠가구", imgs:["sns.jpg"], roles:["기획","촬영","이미지 제작"], tools:PS,
+    desc:"브랜드와 제품 라인별로 색과 구도를 나눈 SNS 이미지입니다. 신제품, 인기, 재입고처럼 소식 유형도 한눈에 구분되게 만들었습니다." },
+  { id:"aicon", cats:["AI 그래픽"], title:"AI 컨셉 이미지 생성", sub:"ChatGPT + AI 툴", imgs:["ai1.jpg","ai2.jpg"], roles:["프롬프트","생성","브랜딩 적용"], tools:["Ps"],
+    desc:"ChatGPT와 AI 툴로 고객의 니즈에 맞게 이미지를 생성해 브랜딩에 사용했습니다. 컨셉 사진이 없는 제품은 배경 이미지를 생성해 컨셉 사진으로 적용했습니다." },
+  { id:"aibanner", cats:["AI 그래픽"], title:"프롬프트 사용 배너 제작", sub:"프로모션 · 이벤트 배너", imgs:["banner.jpg"], roles:["프롬프트","배너 디자인"], tools:["Ps"],
+    desc:"프롬프트를 활용해 이벤트와 프로모션 배너를 제작했습니다." },
+  { id:"aiflyer", cats:["AI 그래픽"], title:"프롬프트 사용 전단지 제작", sub:"제품 · 캠페인 전단지", imgs:["flyer.jpg"], roles:["프롬프트","전단지 디자인"], tools:["Ps"],
+    desc:"프롬프트를 활용해 제품 홍보용과 안내용 전단지를 제작했습니다." },
+  { id:"aiillust", cats:["AI 그래픽"], title:"프롬프트 사용 삽화 제작", sub:"인포그래픽 삽화", imgs:["illust.jpg"], roles:["프롬프트","삽화"], tools:["Ps"],
+    desc:"프롬프트를 활용해 설명용 삽화를 제작했습니다." },
+  { id:"aipack", cats:["AI 그래픽","패키지"], title:"프롬프트 사용 패키지 제작", sub:"플라이어 · 그립 튜브", imgs:["aipack.jpg"], roles:["프롬프트","패키지 디자인"], tools:["Ps","Ai"],
+    desc:"프롬프트를 활용해 낚시 용품 패키지의 앞면, 뒷면, 측면 시안을 제작했습니다." },
+  { id:"ts", cats:["브랜딩"], title:"TS 려니쪼니 로고", sub:"방송 타이틀 로고", imgs:["ts.jpg"], roles:["로고 디자인","방송 그래픽"], tools:["Ai"],
+    desc:"세계 교통 이모저모 랭크SHOW 방송의 타이틀 로고를 디자인했습니다." }
+];
+
+const SKILLS = ["패키지디자인","편집디자인","브랜딩","타이포그래피","웹디자인","배너","리플렛","상세페이지","상품촬영","영상촬영","영상편집","자막","보정·리터칭","색보정","SNS 콘텐츠","인스타그램","마케팅","파이널컷","일러스트","포토샵","인디자인"];
+const METER = [["Ps",9],["Ai",9],["Id",7],["Lr",7],["Pr",6],["Dw",6]];
+
+const $ = (s) => document.querySelector(s);
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+
+/* skills */
+SKILLS.forEach((s) => $("#skill-tags").append(el("span", "tag", s)));
+METER.forEach(([n, v]) => {
+  const m = el("div", "m"); m.append(el("span", null, n));
+  const cells = el("div", "cells"); cells.setAttribute("role", "img"); cells.setAttribute("aria-label", n + " 숙련도 10점 만점에 " + v + "점");
+  for (let i = 0; i < 10; i++) cells.append(el("i", i < v ? "on" : ""));
+  m.append(cells, el("span", "num", String(v))); $("#meter").append(m);
+});
+
+/* works */
+let active = "전체";
+let visible = WORKS.slice();
+function renderTabs() {
+  const box = $("#tabs"); box.textContent = "";
+  ["전체", ...CATS].forEach((c) => {
+    const n = c === "전체" ? WORKS.length : WORKS.filter((w) => w.cats.includes(c)).length;
+    const b = el("button", "tab", c); b.type = "button"; b.setAttribute("aria-pressed", String(c === active));
+    b.append(el("sup", null, String(n)));
+    b.addEventListener("click", () => { active = c; renderTabs(); renderGrid(); });
+    box.append(b);
+  });
+}
+function renderGrid() {
+  visible = active === "전체" ? WORKS.slice() : WORKS.filter((w) => w.cats.includes(active));
+  const g = $("#grid"); g.textContent = "";
+  if (!visible.length) { g.append(el("p", "empty", "이 카테고리에 등록된 작업이 없습니다.")); return; }
+  visible.forEach((w, i) => {
+    const card = el("button", "card"); card.type = "button";
+    const tile = el("div", "tile");
+    const img = el("img"); img.src = "img/" + w.imgs[0]; img.alt = w.title; img.loading = i < 6 ? "eager" : "lazy"; img.decoding = "async";
+    tile.append(img, el("span", "more", "자세히 보기"));
+    const cap = el("div", "cap");
+    const left = el("div"); left.append(el("h3", null, w.title), el("p", "sub", w.sub));
+    cap.append(left, el("span", "tag-cat", w.cats[0]));
+    card.append(tile, cap);
+    card.addEventListener("click", () => openModal(i, card));
+    g.append(card);
+  });
+}
+
+/* modal */
+let cur = 0, lastFocus = null;
+const modal = $("#modal");
+function toolEl(t) { const cls = { Ps: "etc", Ai: "ai", Id: "id", Lr: "" }[t]; return el("span", "tool " + (cls == null ? "etc" : cls), t); }
+function showItem(i) {
+  cur = (i + visible.length) % visible.length;
+  const w = visible[cur];
+  $("#m-cat").textContent = w.cats.join(" · ");
+  $("#m-title").textContent = w.title;
+  $("#m-desc").textContent = w.desc;
+  const roles = $("#m-roles"); roles.textContent = ""; w.roles.forEach((r) => roles.append(el("span", "pill-role", r)));
+  const tools = $("#m-tools"); tools.textContent = ""; w.tools.forEach((t) => tools.append(toolEl(t)));
+  const main = $("#m-img"); main.src = "img/" + w.imgs[0]; main.alt = w.title;
+  const th = $("#m-thumbs"); th.textContent = ""; th.hidden = w.imgs.length < 2;
+  w.imgs.forEach((f, k) => {
+    const b = el("button"); b.type = "button"; b.setAttribute("aria-label", w.title + " 이미지 " + (k + 1));
+    if (k === 0) b.setAttribute("aria-current", "true");
+    const im = el("img"); im.src = "img/" + f; im.alt = ""; b.append(im);
+    b.addEventListener("click", () => { main.src = "img/" + f; th.querySelectorAll("button").forEach((x) => x.removeAttribute("aria-current")); b.setAttribute("aria-current", "true"); });
+    th.append(b);
+  });
+  const multi = visible.length > 1; $("#m-prev").hidden = !multi; $("#m-next").hidden = !multi;
+}
+function openModal(i, from) { lastFocus = from || document.activeElement; showItem(i); modal.hidden = false; document.body.style.overflow = "hidden"; $("#m-close").focus(); }
+function closeModal() { modal.hidden = true; document.body.style.overflow = ""; if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+$("#m-close").addEventListener("click", closeModal);
+$("#m-prev").addEventListener("click", () => showItem(cur - 1));
+$("#m-next").addEventListener("click", () => showItem(cur + 1));
+modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+document.addEventListener("keydown", (e) => {
+  if (modal.hidden) return;
+  if (e.key === "Escape") closeModal();
+  else if (e.key === "ArrowLeft") showItem(cur - 1);
+  else if (e.key === "ArrowRight") showItem(cur + 1);
+  else if (e.key === "Tab") {
+    const f = [...modal.querySelectorAll("button:not([hidden])")].filter((b) => b.offsetParent !== null);
+    if (!f.length) return;
+    const first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+});
+
+/* contact */
+function renderContact() {
+  const box = $("#contact-rows");
+  [["Email", CONTACT.email, true], ["Phone", CONTACT.phone, true], ["Address", CONTACT.address, false]].forEach(([label, val, copyable]) => {
+    const row = el("div", "row"); row.append(el("dt", null, label));
+    const dd = el("dd");
+    if (val) {
+      dd.append(el("span", "val", val));
+      if (copyable) {
+        const b = el("button", "copy", "복사"); b.type = "button";
+        b.addEventListener("click", async () => {
+          try { await navigator.clipboard.writeText(val); b.textContent = "복사됨"; }
+          catch (_) { const r = document.createRange(); r.selectNodeContents(dd.firstChild); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "선택됨"; }
+          setTimeout(() => { b.textContent = "복사"; }, 1600);
+        });
+        dd.append(b);
+      }
+    } else dd.append(el("span", "pending", "연락처 입력 대기 중"));
+    row.append(dd); box.append(row);
+  });
+}
+
+renderTabs(); renderGrid(); renderContact();
+</script>
+
+</body></html>
